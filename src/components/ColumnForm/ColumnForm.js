@@ -4,13 +4,15 @@ import Button from '../Button/Button';
 
 const TextInput = (props) => {
   return (
-    <input
-      className={styles.input}
-      value={props.value}
-      onChange={props.onChange}
-      placeholder={props.placeholder}
-      type="text"
-    />
+    <div className={styles.inputWrapper}>
+      <input
+        className={styles.input}
+        value={props.value}
+        onChange={props.onChange}
+        placeholder={props.placeholder}
+        type="text"
+      />
+    </div>
   );
 };
 const ColumnForm = (props) => {
@@ -24,7 +26,7 @@ const ColumnForm = (props) => {
     setIcon('');
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.columnForm} onSubmit={handleSubmit}>
       Title:{' '}
       <input
         type="text"
