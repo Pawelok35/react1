@@ -3,7 +3,7 @@ import Column from './../Column/Column';
 import ColumnForm from './../ColumnForm/ColumnForm';
 import { useState } from 'react';
 import shortid from 'shortid';
-import CardForm from '../CardForm/CardForm';
+
 
 const List = (props) => {
   const [columns, setColumns] = useState([
@@ -76,11 +76,11 @@ const List = (props) => {
             title={column.title}
             icon={column.icon}
             cards={column.cards}
+            addCard={addCard}
           />
         ))}
       </section>
       <ColumnForm action={addColumn} />
-      <CardForm columnId={props.id} action={addCard} />
       
     </div>
   );

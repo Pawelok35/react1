@@ -16,7 +16,6 @@ const TextInput = (props) => {
   );
 };
 const ColumnForm = (props) => {
-  const [value, setValue] = useState('');
   const [title, setTitle] = useState('');
   const [icon, setIcon] = useState('');
   const handleSubmit = (e) => {
@@ -28,12 +27,17 @@ const ColumnForm = (props) => {
   return (
     <form className={styles.columnForm} onSubmit={handleSubmit}>
       Title:{' '}
-      <input
-        type="text"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
+      <TextInput
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        placeholder="Enter column title"
       />
-      Icon: <input type="text" />
+      Icon:
+      <TextInput
+        value={icon}
+        onChange={(e) => setIcon(e.target.value)}
+        placeholder="Enter column icon"
+      />
       <Button>Add column</Button>
     </form>
   );
