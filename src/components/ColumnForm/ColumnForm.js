@@ -1,20 +1,8 @@
 import styles from './ColumnForm.module.scss';
 import { useState } from 'react';
 import Button from '../Button/Button';
+import TextInput from '../TextInput/TextInput';
 
-const TextInput = (props) => {
-  return (
-    <div className={styles.inputWrapper}>
-      <input
-        className={styles.input}
-        value={props.value}
-        onChange={props.onChange}
-        placeholder={props.placeholder}
-        type="text"
-      />
-    </div>
-  );
-};
 const ColumnForm = (props) => {
   const [title, setTitle] = useState('');
   const [icon, setIcon] = useState('');
